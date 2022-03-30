@@ -1,0 +1,17 @@
+.App {
+  height: auto;
+}
+.App section {
+  width: 100%;
+}
+.App section form input {
+  font-size: 1.1rem;
+}
+.App section .logo {
+  margin-top: 3rem;
+}
+.App section p {
+  margin-bottom: 5rem;
+}
+
+/*# sourceMappingURL=Register.css.map */
