@@ -27,6 +27,6 @@ namespace bemusic.Services
 
         public int? GetSupplierId =>
             User is null ? null : (int?)int.Parse(User.FindFirst(c => c.Type == ClaimTypes.PrimaryGroupSid).Value);
-        
+
     }
 }
