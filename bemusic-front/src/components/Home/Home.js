@@ -87,7 +87,9 @@ import useAuth from "../../hooks/useAuth";
 
             {/*HEADER*/}
             <header>
-                <img src={require('../../assets/logo2.png')} className="logo" alt="brand-logo"/>
+                <img src={require('../../assets/logo2.png')}
+                     className="logo"
+                     alt="brand-logo"/>
 
                 <form  className="search">
                     <input type="text"
@@ -127,7 +129,6 @@ import useAuth from "../../hooks/useAuth";
                     <ul className="list-wrapper">
 
                         {albums.map((album) =>
-
                                <section
                                    key={album.id}
                                    id={`album${album.id}`}

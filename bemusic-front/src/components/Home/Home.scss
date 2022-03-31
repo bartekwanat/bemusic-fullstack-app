@@ -13,7 +13,6 @@
       margin-left: 5rem;
       height: 4rem;
       width: auto;
-
     }
 
       .search {
@@ -79,18 +78,17 @@
     height: 1.5rem;
     padding: 0 1rem 0 1rem;
     padding-bottom: 1rem;
-
-    .column-header--list {
-      grid-area: 1 / 2 / 3 / 3;
-      display: grid;
-      grid-template-columns: 0.5fr repeat(2, 2fr) repeat(2, 1fr);
-      list-style: none;
-      font-size: 0.9rem;
-      padding-bottom: 1rem;
-      padding: 0.5rem;
-    }
   }
 
+  .column-header--list {
+    grid-area: 1 / 2 / 3 / 3;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(2, 2fr) repeat(2, 1fr);
+    list-style: none;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    padding: 0.5rem;
+  }
 
 
   .content-wrapper {
@@ -178,8 +176,6 @@
           justify-content: center;
           height: content-box;
           min-height: 12rem;
-
-
         }
 
         .tracklist {
@@ -191,7 +187,6 @@
           white-space: nowrap;
           border-radius: 5px;
           padding: 0.5rem;
-
         }
 
         .tracklist > li {
@@ -244,41 +239,41 @@
 }
 
 @media (max-width: 1000px) {
-  .column-header {
+  .home-wrapper .column-header {
     display: none;
   }
-  .album-wrapper {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper {
     grid-template-columns:  4fr 1fr;
     min-height: 9rem;
   }
 
-  .tracklist-wrapper {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .tracklist-wrapper {
     display: none;
   }
 
-  .album-avatar {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-avatar {
     height: 5rem;
   }
 
-  .album-title {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-info .album-title {
     font-size: 1.1rem;
   }
 
-  .album-artist {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-info .album-artist {
     font-size: 1rem;
   }
 
-  .music-icon {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .music-icon {
     justify-self: center;
   }
 
-  .tracklist-wrapper--full {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .tracklist-wrapper--full {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: content-box;
   }
-  .album-wrapper--full {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper--full {
     width: 85%;
     display: grid;
     grid-template-columns:  100%;
@@ -289,69 +284,76 @@
     min-height: auto;
     align-content: center;
   }
-  .tracklist > li {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .tracklist > li {
     font-size: 0.6rem;
   }
 }
 
 @media (max-width: 500px) {
+  .home-wrapper .content-wrapper .list-wrapper {
+    width: 80%;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
   .home-wrapper {
     justify-content: space-evenly;
   }
 
-  header {
-    display: flex;
-    flex-direction: column;
-    height: 7rem;
+  .home-wrapper header {
+    height: 20vh;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 4fr repeat(2, 1fr);
+    grid-template-columns: 0.25fr;
   }
 
-  .content-wrapper {
-    height: 70%;
+  .home-wrapper .content-wrapper {
+    height: 50%;
   }
 
-
-
-  .logo {
-    height: 6rem;
-    width: 6rem;
+  .home-wrapper header .logo {
+    justify-self: center;
+    margin: 0;
   }
-  .logout {
+  .home-wrapper header .logout {
     position: fixed;
     top: 2rem;
-    right: -1rem;
+    right: 2rem;
     font-size: 1.5rem;
   }
 
-  .album-title {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-info .album-title {
     font-size: 0.8rem;
   }
-  .album-artist {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-info .album-artist {
     font-size: 0.8rem;
   }
-  .album-year {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-info .album-year {
     font-size: 0.6rem;
   }
 
-  .album-version {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-info .album-version {
     font-size: 0.6rem;
   }
 
-  .album-wrapper {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper {
     grid-template-columns:  6fr 1fr;
     min-height: 8rem;
   }
-  .music-icon {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .music-icon {
     justify-self: flex-end;
   }
 
-  .tracklist-wrapper--full {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .tracklist-wrapper--full {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: content-box;
+
   }
-  .album-wrapper--full {
-    width: 85%;
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper--full {
+    /*width: 85%;*/
     display: grid;
     grid-template-columns:  100%;
     grid-template-rows: repeat(auto-fill, auto);
@@ -360,25 +362,27 @@
     grid-row-gap: 0px;
     min-height: auto;
     align-content: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
-  .tracklist > li {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .tracklist > li {
     font-size: 0.6rem;
   }
 }
 
 @media (max-width: 400px) {
-  .album-avatar {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .album .album-avatar {
     height: auto;
     width: 4rem;
   }
 
-  .tracklist-wrapper--full {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper .tracklist-wrapper--full {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: content-box;
   }
-  .album-wrapper--full {
+  .home-wrapper .content-wrapper .list-wrapper .album-wrapper--full {
     width: 90%;
     display: grid;
     grid-template-columns:  100%;
