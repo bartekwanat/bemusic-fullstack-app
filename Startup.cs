@@ -19,6 +19,7 @@ using bemusic.Services;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
 
 namespace bemusic
 {
@@ -64,7 +65,7 @@ namespace bemusic
             });
 
             services.AddControllers();
-            services.AddDbContext<BeMusicDbContext>();
+            
             services.AddScoped<AlbumSeeder>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<IAlbumService, AlbumService>();
@@ -87,6 +88,8 @@ namespace bemusic
                         .AllowAnyHeader()
                         .AllowCredentials()
                     ));
+            services.AddDbContext<BeMusicDbContext>
+                (options => options.UseSqlServer(Configuration.GetConnectionString("AppDbConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

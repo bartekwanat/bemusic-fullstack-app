@@ -9,8 +9,10 @@ namespace bemusic.Entities
 {
     public class BeMusicDbContext : DbContext
     {
-      private readonly string _connectionString =
-          "Server=(localdb)\\mssqllocaldb;Database=BeMusicDb;Trusted_Connection=True;";
+        public BeMusicDbContext(DbContextOptions<BeMusicDbContext> options) : base(options)
+        {
+            
+        }
       public DbSet<Album> Albums { get; set; }
       public DbSet<Supplier> Suppliers { get; set; }
       public DbSet<Track> Tracks { get; set; }
@@ -21,10 +23,5 @@ namespace bemusic.Entities
       {
       }
 
-      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-      {
-          optionsBuilder.UseSqlServer(_connectionString);
-          
-      }
     }
 }
