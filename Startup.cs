@@ -83,7 +83,7 @@ namespace bemusic
 
             services.AddCors(options =>
                 options.AddPolicy("CorsPolicy", builder =>
-                    builder.SetIsOriginAllowed(_ => true)
+                    builder.SetIsOriginAllowed(origin => true)
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials()

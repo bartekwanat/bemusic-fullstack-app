@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: 4fr repeat(2, 1fr);
     grid-template-rows: 0.25fr;
+    padding-right: 5vw;
 
     .logo  {
       margin-top: 3rem;
@@ -74,7 +75,7 @@
     min-height: 2rem;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    justify-self: center;
+    align-self: center;
     height: 1.5rem;
     padding: 0 1rem 0 1rem;
     padding-bottom: 1rem;
@@ -104,12 +105,13 @@
       display: flex;
       flex-direction: column;
       border-radius: 10px;background: rgb(17,17,17);
-      background: linear-gradient(180deg, rgba(30,30,30, 0.9) 0%, rgba(30,30,30,0.8) 100%);
-      color: white;
+      /*background: linear-gradient(180deg, rgba(30,30,30, 0.9) 0%, rgba(30,30,30,0.9) 100%);*/
+      background-color: #fff;
+      color: #333;
       overflow-y: scroll;
 
       .album-wrapper:not(:last-child) {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #ccc;
       }
 
       .album-wrapper {
@@ -131,6 +133,7 @@
             .album-avatar {
               height: 6rem;
               margin-right: 1rem;
+              opacity: 0.8;
 
             }
 
@@ -148,7 +151,7 @@
               }
 
               .album-year {
-                color: #fff;
+                color: #333;
                 font-size: 0.8rem;
               }
 
@@ -185,7 +188,7 @@
           list-style: none;
           max-height: 2rem;
           white-space: nowrap;
-          border-radius: 5px;
+          border-radius: 10px;
           padding: 0.5rem;
         }
 
@@ -198,7 +201,7 @@
         }
 
         .tracklist:not(:first-child) {
-          border-top: 1px solid #ddd;
+          border-top: 2px solid #ddd;
         }
 
         .arrow {
@@ -206,12 +209,11 @@
           align-self: center;
           justify-self: center;
           position: relative;
-          color: #fff;
+          color: #333;
         }
 
         .turned {
           transform: rotateZ(180deg);
-          transition: 0.5s;
         }
         .music-icon {
            display: flex;

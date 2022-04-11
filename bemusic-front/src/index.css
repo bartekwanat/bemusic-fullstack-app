@@ -124,6 +124,7 @@ label {
   background: #BE1C1F;
   color: #fff;
   padding: 0.25rem;
+  margin-bottom: 0!important;
   position: relative;
   bottom: -10px;
 }
